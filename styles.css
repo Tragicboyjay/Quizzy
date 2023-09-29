@@ -42,6 +42,7 @@ body{
     height: 75dvh;
     border-radius: 2rem;
     width: 80dvw;
+    max-height: 566px;
     max-width: 1080px;
     margin-bottom: 5%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -82,9 +83,11 @@ body{
 }
 
 .scoreContainer{
-    width: 100%;
+    width: 80%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: center;
 }
 
 #answersContainer{
@@ -111,7 +114,6 @@ body{
 
 #answerCheckScreenImg{
     font-size: 9rem;
-    color: var(--primary);
 }
 
 #endGameScreen{

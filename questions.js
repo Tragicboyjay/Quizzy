@@ -106,6 +106,8 @@ const questionsArray = [
 
 let corectAnswerCount = 0;
 const numberOfQuestions = 10
+let questionCount = 0;
+
 
 // game states 
 
@@ -131,6 +133,8 @@ function startGame() {
 }
 
 function getQuestion(array) {
+    // set what question youre on
+
     // clear screen
 
     answerCheckScreen.style.display = 'none';
@@ -143,6 +147,10 @@ function getQuestion(array) {
 
         const scoreCount = document.getElementById('scoreCount');
         scoreCount.innerText = ('Corect Answers: ' + corectAnswerCount);
+
+        const whichQuestion = document.getElementById('questionNumber');
+        whichQuestion.innerText = 'Question ' + (questionCount += 1) + '/' + numberOfQuestions;
+    
 
         // generate random question
 
@@ -172,6 +180,7 @@ function getQuestion(array) {
             }
         }
 
+
         // remove question from list
 
         array.splice(randomIndex, 1);
@@ -184,6 +193,7 @@ function getQuestion(array) {
                 verifyAnswer(selectedAnswer, randomQuestion.answer);
             }
         });
+
 
     }else{
         endGame(array);
@@ -214,6 +224,7 @@ function verifyAnswer(answer, questionAnswer, questionsArray) {
     if(answer === questionAnswer ) {
         correctAnswer.style.display = 'none';
         answerCheckScreenTitle.innerText = 'Your answer is correct!'
+        answerCheckScreenImg.style.color = '#50AA6B'
         answerCheckScreenImg.classList.remove("fa-circle-xmark");
         answerCheckScreenImg.classList.add("fa-circle-check");
         corectAnswerCount += 1;     
@@ -221,6 +232,7 @@ function verifyAnswer(answer, questionAnswer, questionsArray) {
         answerCheckScreenTitle.innerText = 'Your answer is in-correct :(';
         correctAnswer.innerText = 'The correct answer is: ' + questionAnswer;
         correctAnswer.style.display = 'block';
+        answerCheckScreenImg.style.color = 'red'
         answerCheckScreenImg.classList.remove("fa-circle-check");
         answerCheckScreenImg.classList.add("fa-circle-xmark");
     }
