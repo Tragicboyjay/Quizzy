@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzy &trade;</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="questions.js" defer></script>
+    <script src="https://kit.fontawesome.com/d75e165c56.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+    <div class="logo">
+        <i class="fa-solid fa-question"></i>
+        <h1>Quizzy &trade;</h1>
+    </div>
+    
+    <div class="gameContainer">
+        <div id="startScreen">
+            <div class="title">
+                <h1>Basketball Trivia</h1>
+                <h3>click start to begin!</h3>
+            </div>
+            <button type="button" id="startButton" class="btn">Start</button>
+        </div>
+
+        <div id="questionContainer">
+            <div class="scoreContainer">
+                <h2 id="scoreCount"></h2>
+            </div>
+            <h1 id="question"></h1>
+            <div id="answersContainer">
+            </div>
+        </div>
+
+        <div id="answerCheckScreen">
+            <h1 id="answerCheckScreenTitle"></h1>
+            <h3 id="correctAnswer"></h3>
+            <i class="fa-solid" id="answerCheckScreenImg"></i>
+            <button type="button" id="nextQuestion" class="btn">Next question!</button>
+        </div>
+
+        <div id="endGameScreen">
+            <h1 id="gameOver">Game Over!</h1>
+            <h3 id="finalScore"></h3>
+            <button type="button" id="playAgain" class="btn">Play again?</button>
+        </div>
+
+    </div>
+</body>
+</html>
